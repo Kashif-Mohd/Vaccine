@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.bg-1 {background-color: #6ed3cf;
+    color: #ffffff;}
+
+.bg-2 {background-color: #474e5d;
+    color: #ffffff;}
+
+.bg-3 {background-color: #ffffff;
+    color: #555555;}
+
+.bg-4 {background-color: #f6f6f6;
+    color: #555555;}
+
+.container-fluid {
+}
+
+.navbar {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.62857143 !important;
+    letter-spacing: 5px;
+    background-color: rgb(128, 128, 128);
+    }
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover , .navbar-nav li.active a{
+  background-color: #ffffff !important;
+  color: #6ed3cf !important;
+}
+
+.jumbotron {background-color: #1abc9c;
+      color: #ffffff;
+      padding: 6%;
+     
+}
+
+.margin {margin-bottom: 15px;}
+
+.logo {font-size: 150px;
+    color: #1abc9c;}
+
+.sm-logo {font-size: 50px;
+    color: #1abc9c;}
+
+@media screen and (max-width: 768px){
+  
+}
+
+
+/* login div*/
+.login-page {
+  width: 360px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+
+.background {
+  /*background: #76b852; // fallback for old browsers 
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);*/
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("vaccine.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    margin: 25px 0 15px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1abc9c;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover,.btn:active,.btn:focus {
+  background: #17a98c;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+.form .register-form {
+  display: block;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+
+.tab { padding-right: 2em; }
+.align{ float:right;
+}
+
+.fontsize
+{ font-size:small }
