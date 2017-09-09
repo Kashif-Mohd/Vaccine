@@ -10,11 +10,13 @@ namespace Application
 {
     public partial class UpdateForm : System.Web.UI.Page
     {
-        string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
-        //string connstring = "Data Source=DESKTOP-8HFQPKA;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=True";
+        string connstring = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        //string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
         protected void Page_Load(object sender, EventArgs e)
         {           
             TxtDOV.Focus();
+            TextCardno.Attributes.Add("readonly", "readonly");
+            TextCAge.Attributes.Add("readonly", "readonly");
 
             if (Session["User"] != null)
             {
@@ -25,13 +27,12 @@ namespace Application
 
             if (!Page.IsPostBack)
             {
-                this.TextDSSID.Text = Request.QueryString["ID"];
+                //this.TextDSSID.Text = Request.QueryString["ID"];
                 this.TextCardno.Text = Request.QueryString["Card"];
                 PopulateFields();
 
                 string currentDate = DateTime.Today.ToShortDateString();
                 CompareDOV.ValueToCompare = currentDate;
-                show();
             }            
         }
 
@@ -47,14 +48,14 @@ namespace Application
             {
                 TxtDOV.Text = (Reader["Date"].ToString());
                 //TextCardno.Text = (Reader["Card_No"].ToString());
-                //TextDSSID.Text = (Reader["DSS_ID"].ToString());
+                TextDSSID.Text = (Reader["DSS_ID"].ToString());
                 TextName.Text = (Reader["Child_Name"].ToString());
                 TextMname.Text = Reader["Mother_Name"].ToString();
                 TextFname.Text = (Reader["Father_Name"].ToString());
                 TextDOB.Text = (Reader["DOB"].ToString());
                 TextCAge.Text = (Reader["Child_Age"].ToString());
                 TextMAge.Text = (Reader["Mother_Age"].ToString());
-                DropDownList.SelectedValue = (Reader["Gender"].ToString());
+                radioList.SelectedValue = (Reader["Gender"].ToString());
                 CheckBCG.Checked = Convert.ToBoolean(Convert.ToInt32(Reader["BCG"]));
                 CheckOPV0.Checked = Convert.ToBoolean(Convert.ToInt32(Reader["OPV0"]));
                 CheckOPV1.Checked = Convert.ToBoolean(Convert.ToInt32(Reader["OPV1"]));
@@ -85,13 +86,13 @@ namespace Application
             conn.Open();
             try
             {
-                string UpdateStatement = "BEGIN UPDATE Form SET Date=@Date,Card_No=@Card_No,DSS_ID=@DSS_ID,Child_Name=@Child_Name,Mother_Name=@Mother_Name,Father_Name=@Father_Name,DOB=@DOB, Child_Age=@Child_Age,Mother_Age=@Mother_Age, Gender=@Gender," +
+                string UpdateStatement = "BEGIN UPDATE Form SET Date=@Date,DSS_ID=@DSS_ID,Child_Name=@Child_Name,Mother_Name=@Mother_Name,Father_Name=@Father_Name,DOB=@DOB, Child_Age=@Child_Age,Mother_Age=@Mother_Age, Gender=@Gender," +
                     "BCG=@BCG,OPV0=@OPV0, OPV1=@OPV1,Penta1=@Penta1,PCV1=@PCV1,OPV2=@OPV2,Penta2=@Penta2,PCV2=@PCV2,OPV3=OPV3,Penta3=Penta3,PCV3=@PCV3,IPV3=@IPV3,Measles1=@Measles1,Measles2=@Measles2,TT1=@TT1,TT2=@TT2,TT3=@TT3,TT4=@TT4,TT5=@TT5,remarks=@remarks,Entry_date=CURRENT_TIMESTAMP,DIO_Name=@DIO_Name where Card_No= '" + TextCardno.Text + "' END";
                 //string UpdateStatement = "UPDATE FORM SET Name='"+TextName.Text+"' where DSS_ID= '" + Convert.ToString(Session["DssID"]) + "'";
                 SqlCommand cmd = new SqlCommand(UpdateStatement, conn);
 
                 cmd.Parameters.AddWithValue("@Date", TxtDOV.Text);
-                cmd.Parameters.AddWithValue("@Card_No", TextCardno.Text);
+                //cmd.Parameters.AddWithValue("@Card_No", TextCardno.Text);
                 cmd.Parameters.AddWithValue("@DSS_ID", TextDSSID.Text.ToUpper());
                 cmd.Parameters.AddWithValue("@Child_Name", TextName.Text.ToUpper());
                 cmd.Parameters.AddWithValue("@Mother_Name", TextMname.Text.ToUpper());
@@ -99,7 +100,7 @@ namespace Application
                 cmd.Parameters.AddWithValue("@DOB", TextDOB.Text);
                 cmd.Parameters.AddWithValue("@Child_Age", TextCAge.Text);
                 cmd.Parameters.AddWithValue("@Mother_Age", TextMAge.Text);
-                cmd.Parameters.AddWithValue("@Gender", DropDownList.Text);
+                cmd.Parameters.AddWithValue("@Gender", radioList.SelectedValue);
                 cmd.Parameters.AddWithValue("@BCG", CheckBCG.Checked);
                 cmd.Parameters.AddWithValue("@OPV0", CheckOPV0.Checked);
                 cmd.Parameters.AddWithValue("@OPV1", CheckOPV1.Checked);
@@ -195,9 +196,9 @@ namespace Application
             }
         }
 
-        protected void Btnshow_Click(object sender, EventArgs e)
-        {
-            show(); 
-        }
+        //protected void Btnshow_Click(object sender, EventArgs e)
+        //{
+        //    show(); 
+        //}
     }
 }

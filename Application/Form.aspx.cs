@@ -11,8 +11,8 @@ namespace Application
 {
     public partial class Form : System.Web.UI.Page
     {
-        string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
-        //string connstring = "Data Source=DESKTOP-8HFQPKA;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=True";
+        string connstring = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        //string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
         protected void Page_Load(object sender, EventArgs e)
         {
             this.TextDSSID.Text = Request.QueryString["ID"];
@@ -123,7 +123,8 @@ namespace Application
                 cmd.Parameters.AddWithValue("@DOB", TextDOB.Text);
                 cmd.Parameters.AddWithValue("@Child_Age", TextCAge.Text);
                 cmd.Parameters.AddWithValue("@Mother_Age", TextMAge.Text);
-                cmd.Parameters.AddWithValue("@Gender", DropDownList.Text);
+                cmd.Parameters.AddWithValue("@Gender", radioList.SelectedValue);
+                //cmd.Parameters.AddWithValue("@Gender", DropDownList.Text);
                 cmd.Parameters.AddWithValue("@BCG", CheckBCG.Checked);
                 cmd.Parameters.AddWithValue("@OPV0", CheckOPV0.Checked);
                 cmd.Parameters.AddWithValue("@OPV1", CheckOPV1.Checked);
@@ -177,6 +178,7 @@ namespace Application
                 //Response.Redirect("Form.aspx");
                 Server.Transfer("page.aspx");
             }
+            con.Close();
         }
         
     }

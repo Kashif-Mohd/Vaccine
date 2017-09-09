@@ -12,8 +12,8 @@ namespace Application
 {
     public partial class page : System.Web.UI.Page
     {
-        string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
-        //string connstring = "Data Source=DESKTOP-8HFQPKA;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=True";
+        string connstring = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        //string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
         protected void Page_Load(object sender, EventArgs e)
         {
             txtdss.Focus();
@@ -39,7 +39,7 @@ namespace Application
             try
             {
                 SqlDataAdapter adpt = new SqlDataAdapter();
-                string SelectStatement = "Select * from Form where DSS_ID='" + txtdss.Text + "' ";
+                string SelectStatement = "Select * from Form where Card_No='" + txtcard.Text + "' ";
                 SqlCommand cmd = new SqlCommand(SelectStatement, conn);
                 adpt.SelectCommand = new SqlCommand(SelectStatement, conn);
 

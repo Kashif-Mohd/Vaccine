@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="page.aspx.cs" Inherits="Application.page" EnableEventValidation = "false" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,6 +25,7 @@
 </head>
 <body>
     <form id="form1" runat="server" class="form-horizontal">
+        <asp:ScriptManager ID="ScriptManger1" runat="Server"></asp:ScriptManager>
       <nav class="navbar navbar-default navbar-fixed-top">
 	    <div class= "">
 		<div class="navbar-header">
@@ -38,8 +41,8 @@
         
         <div class="collapse navbar-collapse" id="myNavbar">
         	<ul class="nav navbar-nav navbar-right">
-        		<li><a href="Form.aspx">FORM ENTER</a></li>
-        		<li><a href="UpdateForm.aspx">FORM UPDATE</a></li>               
+        		<%--<li><a href="Form.aspx">FORM ENTER</a></li>
+        		<li><a href="UpdateForm.aspx">FORM UPDATE</a></li>        --%>       
         		<li><a href="RegistrationForm.aspx">REGISTER</a></li>
         		<li><a href="login.aspx">LOG OUT</a></li>
       		</ul>
@@ -47,17 +50,20 @@
     </div>
 </nav> 
 
-<div class="jumbotron text-center" style="margin-top:5%;">
+<div class="jumbotron text-center" style="margin-top:3%;">
   <h1>Mother And Child Vaccination Program</h1>
 </div>
 
   <div class= "container-fluid bg-4 text-center" style="position:relative;margin-top:-25px;" >
-    <div style="margin:auto; width:15%;">
+    <div style="margin:5% auto; width:20%;">
       <div class="form-group" style="margin:auto;">
           <asp:TextBox id="txtdss" runat="server" placeholder="DSSID" class="form-control" width="100%" MaxLength="13" Style="text-transform: uppercase;"/>
-          <asp:RegularExpressionValidator ID="RegEx2" runat="server" ControlToValidate="txtdss" ValidationExpression="^[a-zA-Z0-9]+$" ErrorMessage="Invalid input" Font-Size="Smaller" ForeColor="Red"></asp:RegularExpressionValidator>  
-          <asp:TextBox ID="txtcard" runat="server" placeholder="card no" class="form-control" Width="100%" MaxLength="6"></asp:TextBox>  
-          <asp:RegularExpressionValidator ID="RegEx1" runat="server" ControlToValidate="txtcard" ValidationExpression="^[0-9]+$" ErrorMessage="Invalid input" Font-Size="Smaller" ForeColor="Red"></asp:RegularExpressionValidator>     
+          <asp:RequiredFieldValidator ID="Required1" runat="server" class="align" ControlToValidate="txtdss" ErrorMessage="*Required field is empty" Font-Size="Smaller" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+          <asp:RegularExpressionValidator ID="RegEx2" runat="server" ControlToValidate="txtdss" ValidationExpression="^[a-zA-Z0-9]+$" ErrorMessage="Invalid input" Font-Size="Smaller" ForeColor="Red" ></asp:RegularExpressionValidator>  
+          <asp:TextBox ID="txtcard" runat="server" placeholder="card no" class="form-control" Width="100%" ></asp:TextBox>
+          <cc1:MaskedEditExtender ID="CardMask" runat="server" TargetControlID="txtcard" Mask="VPT9999/99" MaskType="Number" ClearMaskOnLostFocus="false" />
+          <asp:RequiredFieldValidator ID="Required2" runat="server" class="align" ControlToValidate="txtdss" ErrorMessage="*Required field is empty" Font-Size="Smaller" ForeColor="Red" ></asp:RequiredFieldValidator> <br />
+          <%--<asp:RegularExpressionValidator ID="RegEx1" runat="server" ControlToValidate="txtcard" ValidationExpression="^[0-9]+$" ErrorMessage="Invalid input" Font-Size="Smaller" ForeColor="Red"></asp:RegularExpressionValidator>--%>     
       </div>
          <asp:Button id="searchbtn" CssClass="btn" style="padding:10px;" runat="server" Text="Submit" OnClick="searchbtn_Click" width="100%"/>
     </div>

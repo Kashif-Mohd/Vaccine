@@ -60,30 +60,6 @@
             //document.getElementById("TextCAge").value = dife[0] + " years, " + dife[1] + " months, and " + dife[2] + " days";
         }
 
-        
-        function codename() {
-            if (document.form1.TextCAge.value != "") {
-                //document.form1.TextMAge.disabled = true;
-                //document.form1.TextCAge.disabled = false;
-                document.form1.TextMAge.style.visibility = 'hidden';
-                document.form1.TextCAge.style.visibility = 'visible';
-
-                document.form1.TextCAge.focus();
-            }
-            else if (document.form1.TextMAge.value != "") {
-
-                document.form1.TextCAge.disabled = true;
-                document.form1.TextMAge.disabled = false;
-
-                document.form1.TextMAge.focus();
-
-            }
-            else if (document.form1.TextCAge.value == "" && document.form1.TextMAge.value == "") {
-
-                document.form1.TextCAge.disabled = false;
-                document.form1.TextMAge.disabled = false;
-            }
-        }
 </script>    
 </head>
 <body>
@@ -104,7 +80,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
         	<ul class="nav navbar-nav navbar-right">
         		<li><a href="page.aspx">HOME</a></li>
-        		<li><a href="UpdateForm.aspx">FORM UPDATE</a></li>              
+        		<%--<li><a href="UpdateForm.aspx">FORM UPDATE</a></li>--%>              
         		<li><a href="RegistrationForm.aspx">REGISTER</a></li>
         		<li><a href="login.aspx" class="nav navbar-nav navbar-right">LOG OUT</a></li>
       		</ul>
@@ -170,11 +146,15 @@
 
             <asp:Panel ID="Panel10" runat="server">
                 <label style="font-size: small">Gender</label>
-                <asp:DropDownList ID="DropDownList" runat="server" class="form-control align" >
+                <asp:RadioButtonList ID="radioList" runat="server" class="align">
+                    <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+                </asp:RadioButtonList>
+                <%--<asp:DropDownList ID="DropDownList" runat="server" class="form-control align" >
                     <asp:ListItem Text="Select Gender" Value="0"></asp:ListItem>
                     <asp:ListItem Text="Male" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Female" Value="2"></asp:ListItem>
-                </asp:DropDownList>
+                </asp:DropDownList>--%>
             </asp:Panel><br />
 
             <%--<asp:Button id="Btnshow" runat="server" Text="Show" CssClass="btn" OnClick="Btnshow_Click" />--%>
@@ -278,15 +258,20 @@
 
     function disable() {
         if (document.getElementById("<%=TextName.ClientID%>").value != "") {
-            document.getElementById("mother").style.visibility = 'hidden';
+            document.getElementById("mother").style.display = 'none';
+            document.getElementById("TextMAge").disabled = 'true';
         }
         else if (document.getElementById("<%=TextName.ClientID%>").value == "" && document.getElementById("<%=TextMname.ClientID%>").value != "") {
-            document.getElementById("child").style.visibility = 'hidden';
-            document.getElementById("mother").style.visibility = 'visible';
+            document.getElementById("child").style.display = 'none';
+            document.getElementById("mother").style.marginTop = '0';
+            document.getElementById("mother").style.display = 'block';
+            document.getElementById("TextDOB").disabled = 'true';
         }
         else {
-            document.getElementById("child").style.display = 'visible';
-            document.getElementById("mother").style.display = "visible";
+            document.getElementById("child").style.display = 'block';
+            document.getElementById("mother").style.display = 'block';
+            document.getElementById("TextMAge").disabled = 'false';
+            document.getElementById("TextDOB").disabled = 'false';
         }
     }
 </script>

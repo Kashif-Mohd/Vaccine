@@ -10,7 +10,8 @@ namespace Application
 {
     public partial class RegistrationForm : System.Web.UI.Page
     {
-        string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
+        string connstring = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        //string connstring = "Data Source=F48604;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=False";
         //string connstring = "Data Source=DESKTOP-8HFQPKA;Initial Catalog=Vaccine; User ID=sa; password=123; Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
