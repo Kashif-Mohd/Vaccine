@@ -14,7 +14,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	<link rel="stylesheet" href="css/style.css" />   
     <style type="text/css">
-        
+        html,
+        body {
+            height:auto!important;
+            min-height:100vh;
+        }
         .auto-style1
         {
             height: 45px;
@@ -31,7 +35,7 @@
             <asp:TextBox id="Textpaswrd" runat="server" placeholder="password"/>
             <asp:Button CssClass="btn" id="button" runat="server" text="login" OnClick="button_Click"/>  
             <p class="message">Not registered? <a href="#">Create an account</a></p>--%>
-            <asp:Login ID="Login1" runat="server" Width="265px" OnAuthenticate="Login1_Authenticate" FailureText="your login attempt was unsuccessful.">
+            <asp:Login ID="Login1" runat="server" Width="265px" OnAuthenticate="Login1_Authenticate" FailureText="invalid user name or password">
                 <LayoutTemplate>
                     <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                         <tr>

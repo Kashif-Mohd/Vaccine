@@ -10,7 +10,16 @@
 namespace Application {
     
     
-    public partial class RegistrationForm {
+    public partial class ExportData {
+        
+        /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
         /// form1 control.
@@ -22,66 +31,66 @@ namespace Application {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Textuname control.
+        /// ScriptManger1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textuname;
+        protected global::System.Web.UI.ScriptManager ScriptManger1;
         
         /// <summary>
-        /// Textemail control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textemail;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Textpass control.
+        /// radioList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textpass;
+        protected global::System.Web.UI.WebControls.RadioButtonList radioList;
         
         /// <summary>
-        /// Textrepass control.
+        /// sbmtbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textrepass;
+        protected global::System.Web.UI.WebControls.Button sbmtbtn;
         
         /// <summary>
-        /// CV control.
+        /// Exprtbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CV;
+        protected global::System.Web.UI.WebControls.Button Exprtbtn;
         
         /// <summary>
-        /// button control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// button1 control.
+        /// GridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button1;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
     }
 }

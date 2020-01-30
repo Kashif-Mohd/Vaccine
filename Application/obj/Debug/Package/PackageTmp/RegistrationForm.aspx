@@ -17,13 +17,14 @@
     <div class="login-page">
         <div class="form">
             <form class="register-form" id="form1" runat="server">
-                <asp:TextBox ID="Textuname" runat="server" placeholder="username" required="required" Width="100%"></asp:TextBox>
-                <asp:TextBox ID="Textemail" runat="server" placeholder="email" required="required" Width="100%"></asp:TextBox>
-                <asp:TextBox ID="Textpass" runat="server" TextMode="Password" placeholder="password" required="required" Width="100%"></asp:TextBox>
-                <asp:TextBox ID="Textrepass" runat="server" TextMode="Password" placeholder="confirm password" required="required" Width="100%" ValidateRequestMode="Enabled"></asp:TextBox>
+                <asp:TextBox ID="Textuname" runat="server" placeholder="username" Width="100%"></asp:TextBox>
+                <asp:TextBox ID="Textemail" runat="server" placeholder="email"  Width="100%"></asp:TextBox>
+                <asp:TextBox ID="Textpass" runat="server" TextMode="Password" placeholder="password"  Width="100%"></asp:TextBox>
+                <asp:TextBox ID="Textrepass" runat="server" TextMode="Password" placeholder="confirm password"  Width="100%" ValidateRequestMode="Enabled"></asp:TextBox>
                 <asp:CompareValidator ID="CV" runat="server" ErrorMessage="Passwords don't match" ControlToValidate="Textrepass" ControlToCompare="Textpass" Operator="Equal" Font-Size="Medium" ForeColor="Red"></asp:CompareValidator>
-                <asp:Button CssClass="btn" ID="button" runat="server" Text="create" Style="background-color: #1abc9c;" OnClick="btn_Click" />
-                <p class="message">Already registered? <a href="page.aspx">Home</a></p>
+                <asp:Button CssClass="btn" ID="button" runat="server" Text="create" Style="background-color: #1abc9c;width:49%;float:right" OnClick="btn_Click" />  
+                <asp:Button CssClass="btn" ID="button1" runat="server" Text="cancel" Style="background-color: #1abc9c;width:49%;float:left" OnClick="btn1_Click"></asp:Button>
+                <p class="message">Already registered? <a href="login.aspx">Sign In</a></p>
             </form>
         </div>
     </div>

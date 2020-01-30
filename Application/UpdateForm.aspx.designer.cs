@@ -121,6 +121,42 @@ namespace Application {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
+        /// Panel11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel11;
+        
+        /// <summary>
+        /// txtQRcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQRcode;
+        
+        /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        
+        /// <summary>
+        /// rexNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rexNumber;
+        
+        /// <summary>
         /// Panel3 control.
         /// </summary>
         /// <remarks>
@@ -292,13 +328,22 @@ namespace Application {
         protected global::System.Web.UI.WebControls.Panel Panel8;
         
         /// <summary>
-        /// TextCAge control.
+        /// AgeDays control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextCAge;
+        protected global::System.Web.UI.WebControls.TextBox AgeDays;
+        
+        /// <summary>
+        /// AgeMonths control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AgeMonths;
         
         /// <summary>
         /// Panel9 control.
@@ -373,6 +418,24 @@ namespace Application {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl birth;
         
         /// <summary>
+        /// txtDateV1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV1;
+        
+        /// <summary>
+        /// MaskedEditExtender3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender3;
+        
+        /// <summary>
         /// CheckBCG control.
         /// </summary>
         /// <remarks>
@@ -398,6 +461,24 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl week6;
+        
+        /// <summary>
+        /// txtDateV2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV2;
+        
+        /// <summary>
+        /// MaskedEditExtender4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender4;
         
         /// <summary>
         /// CheckOPV1 control.
@@ -436,6 +517,24 @@ namespace Application {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl week10;
         
         /// <summary>
+        /// txtDateV3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV3;
+        
+        /// <summary>
+        /// MaskedEditExtender5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender5;
+        
+        /// <summary>
         /// CheckOPV2 control.
         /// </summary>
         /// <remarks>
@@ -470,6 +569,24 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl week14;
+        
+        /// <summary>
+        /// txtDateV4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV4;
+        
+        /// <summary>
+        /// MaskedEditExtender6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender6;
         
         /// <summary>
         /// CheckOPV3 control.
@@ -517,6 +634,24 @@ namespace Application {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl months9;
         
         /// <summary>
+        /// txtDateV5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV5;
+        
+        /// <summary>
+        /// MaskedEditExtender7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender7;
+        
+        /// <summary>
         /// CheckMeasles1 control.
         /// </summary>
         /// <remarks>
@@ -533,6 +668,24 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl months15;
+        
+        /// <summary>
+        /// txtDateV6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV6;
+        
+        /// <summary>
+        /// MaskedEditExtender8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender8;
         
         /// <summary>
         /// CheckMeasles2 control.
@@ -553,6 +706,24 @@ namespace Application {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mother;
         
         /// <summary>
+        /// txtDateMV1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateMV1;
+        
+        /// <summary>
+        /// MaskedEditExtender9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender9;
+        
+        /// <summary>
         /// CheckTT1 control.
         /// </summary>
         /// <remarks>
@@ -560,6 +731,24 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckTT1;
+        
+        /// <summary>
+        /// txtDateMV2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateMV2;
+        
+        /// <summary>
+        /// MaskedEditExtender10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender10;
         
         /// <summary>
         /// CheckTT2 control.
@@ -571,6 +760,24 @@ namespace Application {
         protected global::System.Web.UI.WebControls.CheckBox CheckTT2;
         
         /// <summary>
+        /// txtDateMV3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateMV3;
+        
+        /// <summary>
+        /// MaskedEditExtender11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender11;
+        
+        /// <summary>
         /// CheckTT3 control.
         /// </summary>
         /// <remarks>
@@ -580,6 +787,24 @@ namespace Application {
         protected global::System.Web.UI.WebControls.CheckBox CheckTT3;
         
         /// <summary>
+        /// txtDateMV4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateMV4;
+        
+        /// <summary>
+        /// MaskedEditExtender12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender12;
+        
+        /// <summary>
         /// CheckTT4 control.
         /// </summary>
         /// <remarks>
@@ -587,6 +812,24 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckTT4;
+        
+        /// <summary>
+        /// txtDateMV5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateMV5;
+        
+        /// <summary>
+        /// MaskedEditExtender13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender13;
         
         /// <summary>
         /// CheckTT5 control.
@@ -613,7 +856,7 @@ namespace Application {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtremarks;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtremarks;
         
         /// <summary>
         /// Btnsbmt control.

@@ -72,18 +72,27 @@
     <Content Include="css\AKU%27s_Seal.jpg" />
     <Content Include="css\style.css" />
     <Content Include="css\vaccine.jpg" />
+    <Content Include="ExportData.aspx" />
     <Content Include="Form.aspx" />
     <Content Include="js\index.js" />
     <Content Include="login.aspx" />
     <Content Include="page.aspx" />
     <Content Include="RegistrationForm.aspx" />
     <Content Include="js\Script1.js" />
+    <Content Include="Search.aspx" />
     <Content Include="UpdateForm.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportData.aspx.cs">
+      <DependentUpon>ExportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportData.aspx.designer.cs">
+      <DependentUpon>ExportData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Form.aspx.cs">
       <DependentUpon>Form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,6 +122,13 @@
     <Compile Include="RegistrationForm.aspx.designer.cs">
       <DependentUpon>RegistrationForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateForm.aspx.cs">
       <DependentUpon>UpdateForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,7 +155,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -153,9 +168,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>4876</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2754/</IISUrl>
+          <IISUrl>http://localhost:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

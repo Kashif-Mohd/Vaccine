@@ -43,37 +43,47 @@ namespace Application
 
         protected void btn_Click(object sender, EventArgs e)
         {
-            IDCheck();
-            if (IDCheck())
+            if (Textuname.Text != string.Empty || Textpass.Text != string.Empty || Textrepass.Text != string.Empty)
             {
-                SqlConnection conn = new SqlConnection(connstring);
-                conn.Open();
-                try
+                IDCheck();
+                if (IDCheck())
                 {
-                    string insertStatement = "INSERT INTO UserRegistration(username, email, password)" +
-                         "VALUES (@username, @email, @password)";
-                    SqlCommand cmd = new SqlCommand(insertStatement, conn);
-                    cmd.Parameters.AddWithValue("@username", Textuname.Text);
-                    cmd.Parameters.AddWithValue("@email", Textemail.Text);
-                    cmd.Parameters.AddWithValue("@password", Textpass.Text);
-                    cmd.ExecuteNonQuery();
+                    SqlConnection conn = new SqlConnection(connstring);
+                    conn.Open();
+                    try
+                    {
+                        string insertStatement = "INSERT INTO UserRegistration(username, email, password)" +
+                             "VALUES (@username, @email, @password)";
+                        SqlCommand cmd = new SqlCommand(insertStatement, conn);
+                        cmd.Parameters.AddWithValue("@username", Textuname.Text);
+                        cmd.Parameters.AddWithValue("@email", Textemail.Text);
+                        cmd.Parameters.AddWithValue("@password", Textpass.Text);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (System.Data.SqlClient.SqlException ex)
+                    {
+                        string msg = "Insert Error:";
+                        msg += ex.Message;
+                        throw new Exception(msg);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User created successfully!');window.location ='page.aspx';", true);
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                else
                 {
-                    string msg = "Insert Error:";
-                    msg += ex.Message;
-                    throw new Exception(msg);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('This user ID Already Exist');window.location ='RegistrationForm.aspx';", true);
                 }
-                finally
-                {
-                    conn.Close();
-                }
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User created successfully!');window.location ='page.aspx';", true);
             }
             else
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('This user ID Already Exist');window.location ='RegistrationForm.aspx';", true);
-            }
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Required field is empty')", true);
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("page.aspx");
         }
     }
 }

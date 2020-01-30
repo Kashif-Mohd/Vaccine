@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+html {
+    min-height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
 .bg-1 {background-color: #6ed3cf;
     color: #ffffff;}
 
@@ -13,6 +20,8 @@
     color: #555555;}
 
 .container-fluid {
+    margin: auto;
+    min-height: 100%;
 }
 
 .navbar {
@@ -36,8 +45,7 @@
 
 .jumbotron {background-color: #1abc9c;
       color: #ffffff;
-      padding: 6%;
-     
+      padding: 6%;     
 }
 
 .margin {margin-bottom: 15px;}
@@ -48,7 +56,7 @@
 .sm-logo {font-size: 50px;
     color: #1abc9c;}
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) and (min-height: 1000px){
   
 }
 
