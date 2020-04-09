@@ -490,6 +490,15 @@ namespace Application {
         protected global::System.Web.UI.WebControls.CheckBox CheckPCV1;
         
         /// <summary>
+        /// CheckRota1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckRota1;
+        
+        /// <summary>
         /// week10 control.
         /// </summary>
         /// <remarks>
@@ -542,6 +551,15 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckPCV2;
+        
+        /// <summary>
+        /// CheckRota2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckRota2;
         
         /// <summary>
         /// week14 control.
@@ -641,6 +659,33 @@ namespace Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckMeasles1;
+        
+        /// <summary>
+        /// txtDateV7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateV7;
+        
+        /// <summary>
+        /// MaskedEditExtender13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender13;
+        
+        /// <summary>
+        /// CheckTCV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckTCV;
         
         /// <summary>
         /// months15 control.

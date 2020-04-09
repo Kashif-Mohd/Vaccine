@@ -131,7 +131,7 @@ namespace Application
                     showalert("Enter Date of Birth");
                     TextDOB.Focus();
                 }
-                else if (TextName.Text != "" && (!CheckBCG.Checked && !CheckOPV0.Checked && !CheckOPV1.Checked && !CheckPenta1.Checked && !CheckPCV1.Checked && !CheckOPV2.Checked && !CheckPenta2.Checked && !CheckPCV2.Checked && !CheckOPV3.Checked && !CheckPenta3.Checked && !CheckPCV3.Checked && !CheckIPV3.Checked && !CheckMeasles1.Checked && !CheckMeasles2.Checked))
+                else if (TextName.Text != "" && (!CheckBCG.Checked && !CheckOPV0.Checked && !CheckOPV1.Checked && !CheckPenta1.Checked && !CheckPCV1.Checked && !CheckRota1.Checked && !CheckOPV2.Checked && !CheckPenta2.Checked && !CheckPCV2.Checked && !CheckRota2.Checked && !CheckOPV3.Checked && !CheckPenta3.Checked && !CheckPCV3.Checked && !CheckIPV3.Checked && !CheckMeasles1.Checked && !CheckMeasles2.Checked && !CheckTCV.Checked))
                 {
                     showalert("Please select Child Vaccine");
                     CheckBCG.Focus();
@@ -146,12 +146,12 @@ namespace Application
                     showalert("Enter Date of Visit");
                     txtDateV1.Focus();
                 }
-                else if ((txtDateV2.Text == "" || txtDateV2.Text == "__/__/____") && (CheckOPV1.Checked || CheckPenta1.Checked || CheckPCV1.Checked))
+                else if ((txtDateV2.Text == "" || txtDateV2.Text == "__/__/____") && (CheckOPV1.Checked || CheckPenta1.Checked || CheckPCV1.Checked || CheckRota1.Checked))
                 {
                     showalert("Enter Date of Visit");
                     txtDateV2.Focus();
                 }
-                else if ((txtDateV3.Text == "" || txtDateV3.Text == "__/__/____") && (CheckOPV2.Checked || CheckPenta2.Checked || CheckPCV2.Checked))
+                else if ((txtDateV3.Text == "" || txtDateV3.Text == "__/__/____") && (CheckOPV2.Checked || CheckPenta2.Checked || CheckPCV2.Checked || CheckRota2.Checked))
                 {
                     showalert("Enter Date of Visit");
                     txtDateV3.Focus();
@@ -171,7 +171,11 @@ namespace Application
                     showalert("Enter Date of Visit");
                     txtDateV6.Focus();
                 }
-
+                else if ((txtDateV7.Text == "" || txtDateV7.Text == "__/__/____") && (CheckTCV.Checked))
+                {
+                    showalert("Enter Date of Visit");
+                    txtDateV7.Focus();
+                }
 
                 else if ((txtDateMV1.Text == "" || txtDateMV1.Text == "__/__/____") && (CheckTT1.Checked))
                 {
@@ -256,7 +260,11 @@ namespace Application
                     showalert("Enter Less than Current Date & Greater than Date of Birth!");
                     txtDateV6.Focus();
                 }
-
+                else if (txtDateV7.Text != "99/99/9999" && txtDateV7.Text != "" && ((TextDOB.Text != "" && (DateTime.ParseExact(txtDateV7.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) < DateTime.ParseExact(TextDOB.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)) || DateTime.ParseExact(txtDateV7.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture) > (DateTime.ParseExact(currentdate, "dd/MM/yyyy", CultureInfo.InvariantCulture)))))
+                {
+                    showalert("Enter Less than Current Date & Greater than Date of Birth!");
+                    txtDateV7.Focus();
+                }
 
 
 
@@ -320,8 +328,8 @@ namespace Application
             {
                 conn.Open();
 
-                string insertStatement = "BEGIN INSERT INTO Form(Date,Card_No,DSS_ID,Child_Name,Mother_Name,Father_Name,DOB, Age_months,Age_days,Mother_Age,Gender, BCG,OPV0, OPV1,Penta1,PCV1,OPV2,Penta2,PCV2,OPV3,Penta3,PCV3,IPV3,Measles1,Measles2,TT1,TT2,TT3,TT4,TT5,remarks,Entry_date,DIO_Name,date_1,date_2,date_3,date_4,date_5,date_6,date_m1,date_m2,date_m3,date_m4,date_m5,QR_Code)" +
-                     "VALUES (@Date, @Card_No,@DSS_ID,@Child_Name,@Mother_Name,@Father_Name,@DOB,@Age_months,@Age_days,@Mother_Age,@Gender,@BCG,@OPV0,@OPV1,@Penta1,@PCV1,@OPV2,@Penta2,@PCV2,@OPV3,@Penta3,@PCV3,@IPV3,@Measles1,@Measles2,@TT1,@TT2,@TT3,@TT4,@TT5,@remarks,CURRENT_TIMESTAMP,@DIO_Name,@DateV1,@DateV2,@DateV3,@DateV4,@DateV5,@DateV6,@DateMV1,@DateMV2,@DateMV3,@DateMV4,@DateMV5,@QRcode) END";
+                string insertStatement = "BEGIN INSERT INTO Form(Date,Card_No,DSS_ID,Child_Name,Mother_Name,Father_Name,DOB, Age_months,Age_days,Mother_Age,Gender, BCG,OPV0, OPV1,Penta1,PCV1,OPV2,Penta2,PCV2,OPV3,Penta3,PCV3,IPV3,Measles1,Measles2,TT1,TT2,TT3,TT4,TT5,remarks,Entry_date,DIO_Name,date_1,date_2,date_3,date_4,date_5,date_6,date_7,date_m1,date_m2,date_m3,date_m4,date_m5,QR_Code,Rota1,Rota2,TCV)" +
+                     "VALUES (@Date, @Card_No,@DSS_ID,@Child_Name,@Mother_Name,@Father_Name,@DOB,@Age_months,@Age_days,@Mother_Age,@Gender,@BCG,@OPV0,@OPV1,@Penta1,@PCV1,@OPV2,@Penta2,@PCV2,@OPV3,@Penta3,@PCV3,@IPV3,@Measles1,@Measles2,@TT1,@TT2,@TT3,@TT4,@TT5,@remarks,CURRENT_TIMESTAMP,@DIO_Name,@DateV1,@DateV2,@DateV3,@DateV4,@DateV5,@DateV6,@DateV7,@DateMV1,@DateMV2,@DateMV3,@DateMV4,@DateMV5,@QRcode,@Rota1,@Rota2,@TCV) END";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
@@ -341,15 +349,18 @@ namespace Application
                 cmd.Parameters.AddWithValue("@OPV1", CheckOPV1.Checked);
                 cmd.Parameters.AddWithValue("@Penta1", CheckPenta1.Checked);
                 cmd.Parameters.AddWithValue("@PCV1", CheckPCV1.Checked);
+                cmd.Parameters.AddWithValue("@Rota1", CheckRota1.Checked);
                 cmd.Parameters.AddWithValue("@OPV2", CheckOPV2.Checked);
                 cmd.Parameters.AddWithValue("@Penta2", CheckPenta2.Checked);
                 cmd.Parameters.AddWithValue("@PCV2", CheckPCV2.Checked);
+                cmd.Parameters.AddWithValue("@Rota2", CheckRota2.Checked);
                 cmd.Parameters.AddWithValue("@OPV3", CheckOPV3.Checked);
                 cmd.Parameters.AddWithValue("@Penta3", CheckPenta3.Checked);
                 cmd.Parameters.AddWithValue("@PCV3", CheckPCV3.Checked);
                 cmd.Parameters.AddWithValue("@IPV3", CheckIPV3.Checked);
                 cmd.Parameters.AddWithValue("@Measles1", CheckMeasles1.Checked);
                 cmd.Parameters.AddWithValue("@Measles2", CheckMeasles2.Checked);
+                cmd.Parameters.AddWithValue("@TCV", CheckTCV.Checked);
                 cmd.Parameters.AddWithValue("@TT1", CheckTT1.Checked);
                 cmd.Parameters.AddWithValue("@TT2", CheckTT2.Checked);
                 cmd.Parameters.AddWithValue("@TT3", CheckTT3.Checked);
@@ -363,6 +374,7 @@ namespace Application
                 cmd.Parameters.AddWithValue("@DateV4", txtDateV4.Text);
                 cmd.Parameters.AddWithValue("@DateV5", txtDateV5.Text);
                 cmd.Parameters.AddWithValue("@DateV6", txtDateV6.Text);
+                cmd.Parameters.AddWithValue("@DateV7", txtDateV7.Text);
                 cmd.Parameters.AddWithValue("@DateMV1", txtDateMV1.Text);
                 cmd.Parameters.AddWithValue("@DateMV2", txtDateMV2.Text);
                 cmd.Parameters.AddWithValue("@DateMV3", txtDateMV3.Text);

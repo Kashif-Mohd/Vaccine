@@ -99,8 +99,12 @@
 </head>
 <body style="background-color: #f6f6f6;">
     <form class="form-inline" id="form1" runat="server">
+
         <asp:ScriptManager ID="ScriptManger1" runat="Server"></asp:ScriptManager>
-        <nav class="navbar navbar-default ">
+
+
+
+        <nav class="navbar navbar-default">
             <div class="">
                 <div class="navbar-header">
                     <asp:Label ID="Label1" class="navbar-brand" runat="server" Text="Label1.text" Style="text-transform: uppercase; border-right: groove; border-color: lightgray;"></asp:Label>
@@ -124,10 +128,10 @@
         </nav>
 
         <div class="container-fluid bg-4 text-center">
-            <h2 class="margin">Temporary logging of daily vaccines administration</h2>
+            <h2 class="margin">Temporary Logging of Daily Vaccines Administration</h2>
             <div class="row" style="margin: auto; width: 100%;">
-                <div class="col-sm-3 margin text-left" style="top: 0px; left: 0px; border-right-style: groove; border-right-color: inherit; border-right-width: medium;">
-                    <h4 class="margin text-center">Child's Data</h4>
+                <div class="col-sm-3 margin text-left" style="top: 0px; left: 0px; margin-top: 20px; border-right-style: groove; border-right-color: inherit; border-right-width: medium;">
+                    <%--  <h4 class="margin text-center">Child's Data</h4>--%>
                     <asp:Panel ID="Panel1" runat="server">
                         <label style="font-size: small">Date of Visit</label><asp:TextBox ID="TxtDOV" runat="server" class="form-control align" placeholder="dd/MM/yyyy" ClientIDMode="Static"></asp:TextBox><br />
                         <cc1:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="TxtDOV" Mask="99/99/9999" MaskType="Date"></cc1:MaskedEditExtender>
@@ -210,7 +214,7 @@
                     <asp:Panel ID="Panel10" runat="server">
                         <label style="font-size: small">Gender</label>
                         <asp:RadioButtonList ID="radioList" runat="server" class="align">
-                            <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="Male" Value="1" Selected="True"></asp:ListItem>
                             <asp:ListItem Text="Female" Value="2"></asp:ListItem>
                         </asp:RadioButtonList>
                     </asp:Panel>
@@ -218,6 +222,7 @@
 
                     <%--<asp:Button id="Btnshow" runat="server" Text="Show" CssClass="btn" OnClick="Btnshow_Click" />--%>
                 </div>
+
                 <div id="Div1" runat="server" class="col-sm-7">
 
                     <div id="child" runat="server">
@@ -244,6 +249,7 @@
                             <asp:CheckBox runat="server" onclick="EnableG2(this)" ID="CheckOPV1" class="tab" /><label>OPV1</label><br />
                             <asp:CheckBox runat="server" onclick="EnableG2(this)" ID="CheckPenta1" class="tab" /><label>Penta1</label><br />
                             <asp:CheckBox runat="server" onclick="EnableG2(this)" ID="CheckPCV1" class="tab" /><label>PCV1</label><br />
+                            <asp:CheckBox runat="server" onclick="EnableG2(this)" ID="CheckRota1" class="tab" /><label>Rota1</label><br />
                         </div>
 
                         <div id="week10" class="col-sm-2" style="border-right: groove; border-color: lightgray;" runat="server">
@@ -256,6 +262,7 @@
                             <asp:CheckBox runat="server" onclick="EnableG3(this)" ID="CheckOPV2" class="tab" /><label>OPV2</label><br />
                             <asp:CheckBox runat="server" onclick="EnableG3(this)" ID="CheckPenta2" class="tab" /><label>Penta2</label>
                             <asp:CheckBox runat="server" onclick="EnableG3(this)" ID="CheckPCV2" class="tab" /><label>PCV2</label><br />
+                            <asp:CheckBox runat="server" onclick="EnableG3(this)" ID="CheckRota2" class="tab" /><label>Rota2</label><br />
                         </div>
 
                         <div id="week14" class="col-sm-2" style="border-right: groove; border-color: lightgray;" runat="server">
@@ -280,6 +287,13 @@
                             <br />
                             <br />
                             <asp:CheckBox runat="server" onclick="EnableG5(this)" ID="CheckMeasles1" class="tab" /><label>Measles1</label>
+                            <br />
+                            <br /><label style="font-size: small"><b>Between 9 to 15 months </b></label>
+                            <asp:TextBox ID="txtDateV7" runat="server" class="form-control align" placeholder="dd/MM/yyyy" ClientIDMode="Static" Width="100px"></asp:TextBox><br />
+                            <cc1:MaskedEditExtender ID="MaskedEditExtender13" runat="server" TargetControlID="txtDateV7" Mask="99/99/9999" MaskType="Date"></cc1:MaskedEditExtender>
+                            <br />
+                            <br />
+                            <asp:CheckBox runat="server" onclick="EnableG7(this)" ID="CheckTCV" class="tab" /><label>TCV</label>
                         </div>
 
                         <div id="months15" class="col-sm-2" style="border-right: groove; border-color: lightgray;" runat="server">
@@ -291,6 +305,7 @@
                             <br />
                             <asp:CheckBox runat="server" onclick="EnableG6(this)" ID="CheckMeasles2" class="tab" /><label>Measles2</label>
                         </div>
+
                     </div>
 
 
@@ -326,23 +341,26 @@
                         </div>
                         <div class="col-sm-2" style="border-color: lightgray;">
                             <label style="font-size: small">Date of Visit</label><asp:TextBox ID="txtDateMV5" runat="server" class="form-control align" placeholder="dd/MM/yyyy" ClientIDMode="Static" Width="100px"></asp:TextBox><br />
-                            <cc1:MaskedEditExtender ID="MaskedEditExtender13" runat="server" TargetControlID="txtDateMV5" Mask="99/99/9999" MaskType="Date"></cc1:MaskedEditExtender>
+                            <cc1:MaskedEditExtender ID="MaskedEditExtender14" runat="server" TargetControlID="txtDateMV5" Mask="99/99/9999" MaskType="Date"></cc1:MaskedEditExtender>
                             <br />
                             <br />
                             <asp:CheckBox runat="server" ID="CheckTT5" onclick="EnableMG5(this)" class="tab" /><label>TT5</label>
                         </div>
                     </div>
+
                 </div>
 
-                <div id="remarks" class="col-md-2" runat="server" style="margin-top: 60px;">
+                <div id="remarks" class="col-sm-2" runat="server" style="margin-top: 70px; ma">
                     <h4 class="margin"><strong>Remarks</strong></h4>
                     <textarea id="txtremarks" runat="server"></textarea>
                     <%--<asp:TextBox ID="txtremarks" runat="server" class="form-control" size="15"></asp:TextBox>--%>
                 </div>
-
-                <asp:Button ID="Btnsbmt" runat="server" Text="Submit" OnClick="Button1_Click" CssClass="btn" Style="width: 20%; margin-top: 30px;" />
+                <br />
+                <asp:Button ID="Btnsbmt" runat="server" Text="Submit" OnClick="Button1_Click" CssClass="btn" Style="width: 20%; margin-top: 40px;" />
             </div>
         </div>
+
+
 
     </form>
 
@@ -356,10 +374,12 @@
             var G2Vacc1 = document.getElementById('<%= CheckOPV1.ClientID %>');
             var G2Vacc2 = document.getElementById('<%= CheckPenta1.ClientID %>');
             var G2Vacc3 = document.getElementById('<%= CheckPCV1.ClientID %>');
+            var G2Vacc4 = document.getElementById('<%= CheckRota1.ClientID %>');
 
             var G3Vacc1 = document.getElementById('<%= CheckOPV2.ClientID %>');
             var G3Vacc2 = document.getElementById('<%= CheckPenta2.ClientID %>');
             var G3Vacc3 = document.getElementById('<%= CheckPCV2.ClientID %>');
+            var G3Vacc4 = document.getElementById('<%= CheckRota2.ClientID %>');
 
             var G4Vacc1 = document.getElementById('<%= CheckOPV3.ClientID %>')
             var G4Vacc2 = document.getElementById('<%= CheckPenta3.ClientID %>')
@@ -369,6 +389,9 @@
             var G5Vacc1 = document.getElementById('<%= CheckMeasles1.ClientID %>')
 
             var G6Vacc1 = document.getElementById('<%= CheckMeasles2.ClientID %>')
+
+            var G7Vacc1 = document.getElementById('<%= CheckTCV.ClientID %>')
+
 
             var MVaccG1 = document.getElementById('<%= CheckTT1.ClientID %>');
             var MVaccG2 = document.getElementById('<%= CheckTT2.ClientID %>');
@@ -381,10 +404,10 @@
             if (!G1Vacc1.checked && !G1Vacc2.checked) {
                 document.getElementById('<%= txtDateV1.ClientID %>').readOnly = true;
             }
-            if (!G2Vacc1.checked && !G2Vacc2.checked && !G2Vacc3.checked) {
+            if (!G2Vacc1.checked && !G2Vacc2.checked && !G2Vacc3.checked && !G2Vacc4.checked) {
                 document.getElementById('<%= txtDateV2.ClientID %>').readOnly = true;
             }
-            if (!G3Vacc1.checked && !G3Vacc2.checked && !G3Vacc3.checked) {
+            if (!G3Vacc1.checked && !G3Vacc2.checked && !G3Vacc3.checked && !G3Vacc4.checked) {
                 document.getElementById('<%= txtDateV3.ClientID %>').readOnly = true;
             }
             if (!G4Vacc1.checked && !G4Vacc2.checked && !G4Vacc3.checked && !G4Vacc4.checked) {
@@ -396,6 +419,10 @@
             if (!G6Vacc1.checked) {
                 document.getElementById('<%= txtDateV6.ClientID %>').readOnly = true;
             }
+            if (!G7Vacc1.checked) {
+                document.getElementById('<%= txtDateV7.ClientID %>').readOnly = true;
+            }
+
 
             //Mother:
             if (!MVaccG1.checked) {
@@ -412,17 +439,6 @@
             }
             if (!MVaccG5.checked) {
                 document.getElementById('<%= txtDateMV5.ClientID %>').readOnly = true;
-            }
-
-            if (!MVaccG1.checked && !MVaccG2.checked && !MVaccG3.checked && !MVaccG4.checked && !MVaccG5.checked) {
-
-                document.getElementById("child").style.display = 'block';
-                document.getElementById("mother").style.display = 'none';
-            }
-            else {
-                document.getElementById("mother").style.marginTop = '50px';
-                document.getElementById("mother").style.display = 'block';
-                document.getElementById("child").style.display = 'none';
             }
 
         }
@@ -449,15 +465,16 @@
 
     function EnableG2(checkBox) {
         var G2Vacc1 = document.getElementById('<%= CheckOPV1.ClientID %>');
-        var G2Vacc2 = document.getElementById('<%= CheckPenta1.ClientID %>');
-        var G2Vacc3 = document.getElementById('<%= CheckPCV1.ClientID %>');
+         var G2Vacc2 = document.getElementById('<%= CheckPenta1.ClientID %>');
+         var G2Vacc3 = document.getElementById('<%= CheckPCV1.ClientID %>');
+         var G2Vacc4 = document.getElementById('<%= CheckRota1.ClientID %>');
 
 
-        if (checkBox.checked) {
-            document.getElementById('<%= txtDateV2.ClientID %>').removeAttribute('readonly');
-    }
-    else if (!G2Vacc1.checked && !G2Vacc2.checked && !G2Vacc3.checked) {
-        document.getElementById('<%= txtDateV2.ClientID %>').readOnly = true;
+         if (checkBox.checked) {
+             document.getElementById('<%= txtDateV2.ClientID %>').removeAttribute('readonly');
+        }
+        else if (!G2Vacc1.checked && !G2Vacc2.checked && !G2Vacc3.checked && !G2Vacc4.checked) {
+            document.getElementById('<%= txtDateV2.ClientID %>').readOnly = true;
             document.getElementById('<%= txtDateV2.ClientID %>').value = '';
         }
 }
@@ -465,14 +482,15 @@
 
 function EnableG3(checkBox) {
     var G3Vacc1 = document.getElementById('<%= CheckOPV2.ClientID %>');
-    var G3Vacc2 = document.getElementById('<%= CheckPenta2.ClientID %>');
-    var G3Vacc3 = document.getElementById('<%= CheckPCV2.ClientID %>');
+     var G3Vacc2 = document.getElementById('<%= CheckPenta2.ClientID %>');
+     var G3Vacc3 = document.getElementById('<%= CheckPCV2.ClientID %>');
+     var G3Vacc4 = document.getElementById('<%= CheckRota2.ClientID %>');
 
 
-    if (checkBox.checked) {
-        document.getElementById('<%= txtDateV3.ClientID %>').removeAttribute('readonly');
+     if (checkBox.checked) {
+         document.getElementById('<%= txtDateV3.ClientID %>').removeAttribute('readonly');
      }
-     else if (!G3Vacc1.checked && !G3Vacc2.checked && !G3Vacc3.checked) {
+     else if (!G3Vacc1.checked && !G3Vacc2.checked && !G3Vacc3.checked && !G3Vacc4.checked) {
          document.getElementById('<%= txtDateV3.ClientID %>').readOnly = true;
         document.getElementById('<%= txtDateV3.ClientID %>').value = '';
     }
@@ -517,12 +535,21 @@ function EnableG6(checkBox) {
     }
 }
 
+function EnableG7(checkBox) {
+    var G7Vacc1 = document.getElementById('<%= CheckTCV.ClientID %>')
+    if (checkBox.checked) {
+        document.getElementById('<%= txtDateV7.ClientID %>').removeAttribute('readonly');
+    } else if (!G7Vacc1.checked) {
+        document.getElementById('<%= txtDateV7.ClientID %>').readOnly = true;
+                document.getElementById('<%= txtDateV7.ClientID %>').value = '';
+            }
+    }
 
 
-//Hide Mother (Date of Visit):
+    //Hide Mother (Date of Visit):
 
-function EnableMG1(checkBox) {
-    var MVaccG1 = document.getElementById('<%= CheckTT1.ClientID %>');
+    function EnableMG1(checkBox) {
+        var MVaccG1 = document.getElementById('<%= CheckTT1.ClientID %>');
 
     if (checkBox.checked) {
         document.getElementById('<%= txtDateMV1.ClientID %>').removeAttribute('readonly');
@@ -582,10 +609,6 @@ function EnableMG5(checkBox) {
 
 
 
-
-
-
-
 function hide() {
     var age = parseInt(document.getElementById("AgeMonths").value, 10);
     var days = parseInt(document.getElementById("AgeDays").value, 10);
@@ -599,6 +622,7 @@ function hide() {
         document.getElementById("week14").style.display = 'none';
         document.getElementById("months9").style.display = 'none';
         document.getElementById("months15").style.display = 'none';
+
     }
     else if (age < 2.5) {
         document.getElementById("week6").style.display = 'block';
@@ -676,7 +700,6 @@ function disableage() {
 
         document.getElementById("AgeMonths").value = "";
         document.getElementById("AgeDays").value = "";
-
     }
     else {
         document.getElementById("AgeMonths").disabled = true;
@@ -685,5 +708,6 @@ function disableage() {
 }
 
     </script>
+
 </body>
 </html>

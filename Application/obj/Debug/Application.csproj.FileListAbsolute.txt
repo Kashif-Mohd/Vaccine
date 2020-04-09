@@ -39,3 +39,9 @@ C:\Users\FA0421\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\b
 C:\Users\FA0421\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\bin\AjaxControlToolkit.dll
 C:\Users\FA0421\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\obj\Debug\Application.dll
 C:\Users\FA0421\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\obj\Debug\Application.pdb
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\bin\Application.dll
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\bin\Application.pdb
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\bin\AjaxControlToolkit.dll
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\obj\Debug\Application.dll
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\obj\Debug\Application.pdb
+C:\Users\Lenovoi\Documents\Visual Studio 2012\Projects\vaccine_2018\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
